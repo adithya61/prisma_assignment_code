@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dec0dd30-7f47-45ad-b276-70feedaab9d8",
+    "checksum": "5d210924968c4b8ea373fdf4895ed5d391749d0311216bbf787348f3a04d35f2",
+    "finished_at": "2026-09-22T18:28:03.288014+05:30",
+    "migration_name": "20260922125803_add_schema",
+    "logs": null,
+    "rolled_back_at": null,
+    "started_at": "2026-09-22T18:28:03.258475+05:30",
+    "applied_steps_count": 1
+  },
+  {
+    "id": "f5eaa309-89a2-4527-9b88-87146ced29fa",
+    "checksum": "5180242625f27d7ef691004a0edd776345195026995638f3688a643ea1011394",
+    "finished_at": "2026-09-26T14:10:35.597388+05:30",
+    "migration_name": "20260926084035_update_schema_add_card_order",
+    "logs": null,
+    "rolled_back_at": null,
+    "started_at": "2026-09-26T14:10:35.595729+05:30",
+    "applied_steps_count": 1
+  },
+  {
+    "id": "b364306f-07ae-406f-8011-25d8e05eeab7",
+    "checksum": "ca24bfa996cddf7a3afb554546cc14d32c5177d565d31bdad4dd88562ddb894c",
+    "finished_at": "2026-09-30T12:00:04.015242+05:30",
+    "migration_name": "20260930063004_update_datatype_position",
+    "logs": null,
+    "rolled_back_at": null,
+    "started_at": "2026-09-30T12:00:04.006298+05:30",
+    "applied_steps_count": 1
+  },
+  {
+    "id": "9852655d-c5d0-4ac2-8fcc-138e56c5a8cd",
+    "checksum": "18ed6e933a0f39617c5dfc5cf2be5db80685ee29111b2ac0a0070dedcbd5fb38",
+    "finished_at": "2026-09-30T23:15:38.484222+05:30",
+    "migration_name": "20260930174538_add_deleted_at_to_card_board_models",
+    "logs": null,
+    "rolled_back_at": null,
+    "started_at": "2026-09-30T23:15:38.482518+05:30",
+    "applied_steps_count": 1
+  }
+]

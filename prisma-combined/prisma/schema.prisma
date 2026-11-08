@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma/"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+    id Int @id @default(autoincrement())
+    name String
+    email String
+    ownedWorkplaces Workspace[] @relation("workspaceOwner")
+    memberWorkspaces Workspace[] @relation("workspaceMembers")
+    createdAt DateTime @default(now())
+    assignedCards Card[]
+}
+
+model Workspace {
+    id Int @id @default(autoincrement())
+    name String
+    ownerId Int
+    owner User @relation("workspaceOwner", fields: [ownerId], references: [id])
+    members User[] @relation("workspaceMembers")
+    boards Board[] @relation("workspaceBoard")
+    labels Label[]
+}
+
+model Board {
+    id Int @id @default(autoincrement())
+    name String
+    workspaceId Int
+    parentWorkspace Workspace @relation("workspaceBoard", fields: [workspaceId], references: [id])
+    lists List[]
+    deletedAt DateTime?
+    createdAt DateTime @default(now())
+}
+
+model List {
+    id Int @id @default(autoincrement())
+    name String
+    boardId Int
+    parentBoard Board @relation(fields: [boardId], references: [id])
+    position Int
+    cards Card[]
+    cardOrder Int[]
+}
+
+model Card {
+    id Int @id @default(autoincrement())
+    title String
+    description String?
+    listId Int
+    parentList List @relation(fields: [listId], references: [id])
+    assigneeId Int?
+    assignedTo User? @relation(fields: [assigneeId], references: [id])
+    dueDate DateTime?
+    completedAt DateTime?
+    position Float
+    createdAt DateTime @default(now())
+    deletedAt DateTime?
+    cardlabels CardLabel[]
+}
+
+model Label {
+    id Int @id @default(autoincrement())
+    name String
+    color String
+    workspaceId Int
+    labelWorkspaces Workspace @relation(fields: [workspaceId], references: [id])
+    cardlabels CardLabel[]
+
+}
+
+model CardLabel {
+    labelId Int
+    cardId Int
+    card Card @relation(fields: [cardId], references: [id])
+    label Label @relation(fields: [labelId], references: [id])
+
+    @@id([cardId, labelId])
+}
+

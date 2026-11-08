@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Bug",
+    "color": "#e53935",
+    "workspaceId": 1
+  },
+  {
+    "id": 2,
+    "name": "Urgent",
+    "color": "#fb8c00",
+    "workspaceId": 1
+  }
+]

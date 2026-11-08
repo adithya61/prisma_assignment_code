@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "\"testuser\"",
+    "email": "\"test1@gmail.com\"",
+    "createdAt": "2026-09-23T16:40:20.35"
+  },
+  {
+    "id": 2,
+    "name": "Alice Sharma",
+    "email": "alice@example.com",
+    "createdAt": "2026-09-28T20:13:36.87"
+  },
+  {
+    "id": 3,
+    "name": "Bob Menon",
+    "email": "bob@example.com",
+    "createdAt": "2026-09-28T20:13:36.933"
+  },
+  {
+    "id": 4,
+    "name": "Carol Fernandes",
+    "email": "carol@example.com",
+    "createdAt": "2026-09-28T20:13:36.934"
+  }
+]

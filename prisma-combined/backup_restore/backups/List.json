@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "To Do",
+    "boardId": 1,
+    "position": 0,
+    "cardOrder": []
+  },
+  {
+    "id": 2,
+    "name": "In Progress",
+    "boardId": 1,
+    "position": 1,
+    "cardOrder": []
+  },
+  {
+    "id": 3,
+    "name": "Done",
+    "boardId": 1,
+    "position": 2,
+    "cardOrder": []
+  }
+]

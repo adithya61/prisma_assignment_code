@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// self referential model
+model Comment {
+    id Int @id @default(autoincrement())
+    parentId Int?
+    parent Comment? @relation("CommentReplies", fields: [parentId], references: [id])
+    replies Comment[] @relation("CommentReplies")
+    deletedAt DateTime?
+    updatedAt DateTime?
+    repliesCount Int? @default(0)
+}
+
